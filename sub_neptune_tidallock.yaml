@@ -96,7 +96,7 @@ outputs:
   - type: restart
     dt: 8.64e5 # every 10 days
   - type: netcdf
-    variables: [prim, uov]
+    variables: [prim]
     dt: 8.64e4 # every day
   - type: netcdf
     variables: [thermo, path]

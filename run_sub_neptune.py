@@ -242,7 +242,7 @@ def run_simulation(
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="Run tidally locked Sub-Neptune simulation.")
     p.add_argument("-c", "--config", required=True, help="YAML configuration file")
-    p.add_argument("--output-dir", default="sub_neptune/output", help="Output directory")
+    p.add_argument("--output-dir", default="output", help="Output directory")
     p.add_argument(
         "--restart-name",
         default="",
