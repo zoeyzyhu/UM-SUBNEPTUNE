@@ -17,7 +17,7 @@ from pathlib import Path
 import torch
 import yaml
 import snapy
-from snapy import MeshBlock, MeshBlockOptions, kICY, kIDN, kIPR
+from snapy import MeshBlock, MeshBlockOptions, kIV1, kICY, kIDN, kIPR
 from kintera import Kinetics, KineticsOptions, ThermoX
 from paddle import evolve_kinetics, setup_profile
 
@@ -82,6 +82,10 @@ def initialize_isothermal(block: MeshBlock, config: dict) -> tuple[dict[str, tor
         param[f"x{name}"] = float(problem.get(f"x{name}", 0.0))
 
     hydro_w = setup_profile(block, param, method="isothermal")
+
+    # add random noise to IV1
+    hydro_w[kIV1] += 1e-6 * torch.randn_like(hydro_w[kIV1])
+
     return block.initialize({"hydro_w": hydro_w})
 
 
