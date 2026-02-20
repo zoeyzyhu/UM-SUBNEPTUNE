@@ -38,8 +38,8 @@ geometry:
 
   cells:
     nx1: 100
-    nx2: 192
-    nx3: 192
+    nx2: 96
+    nx3: 96
     nghost: 3
 
 distribute:
@@ -149,7 +149,7 @@ problem:
   Ps: 1.e6 # 10 bar at lower boundary
 
   # Uniform initial water vapor profile (20% mole fraction)
-  xH2O: 0.2
+  xH2O: 0.1
 
   # Tidally locked forcing controls used by run_sub_neptune.py
   stellar_flux_nadir: 2000.0

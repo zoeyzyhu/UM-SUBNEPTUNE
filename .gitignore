@@ -3,3 +3,6 @@ output*
 
 # env
 .env
+
+# pt file
+thermo_*.pt
