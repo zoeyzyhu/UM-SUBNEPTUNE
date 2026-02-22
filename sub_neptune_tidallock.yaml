@@ -38,12 +38,12 @@ geometry:
 
   cells:
     nx1: 100
-    nx2: 192
-    nx3: 192
+    nx2: 96
+    nx3: 96
     nghost: 3
 
 distribute:
-  backend: gloo
+  backend: nccl
   layout: cubed-sphere
   nb2: 1
   nb3: 1
@@ -96,7 +96,7 @@ outputs:
   - type: restart
     dt: 8.64e5 # every 10 days
   - type: netcdf
-    variables: [prim, uov]
+    variables: [prim]
     dt: 8.64e4 # every day
   - type: netcdf
     variables: [thermo, path]
@@ -148,8 +148,8 @@ problem:
   Tmin: 200.
   Ps: 1.e6 # 10 bar at lower boundary
 
-  # Uniform initial water vapor profile (20% mole fraction)
-  xH2O: 0.2
+  # Uniform initial water vapor profile (10% mole fraction)
+  xH2O: 0.1
 
   # Tidally locked forcing controls used by run_sub_neptune.py
   stellar_flux_nadir: 2000.0
