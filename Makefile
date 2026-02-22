@@ -5,7 +5,7 @@ GITCONFIG := $${HOME}/.gitconfig
 GITCREDENTIALS := $${HOME}/.git-credentials
 DATE_STRING := $(shell date "+%Y-%m-%d")
 JOB := canoe$(shell date "+%Y%m%d_%H%M%S")
-HOST := $${HOSTNAME}
+HOST := $(shell hostname)
 
 .PHONY: help env up down ps start build deploy finish log log1 log2 status status1 status2 mint upload node resource save load
 
