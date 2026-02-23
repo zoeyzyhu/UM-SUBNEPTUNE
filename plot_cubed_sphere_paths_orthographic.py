@@ -32,7 +32,7 @@ def save_orthographic_plot(field, visible, var_name: str, nc_stem: str, outdir: 
     fig, ax = plt.subplots(figsize=(8.5, 8.5), constrained_layout=True)
 
     masked = np.ma.masked_invalid(field)
-    im = ax.imshow(masked, origin="lower", cmap="viridis", vmin=vmin, vmax=vmax, extent=(-1, 1, -1, 1))
+    im = ax.imshow(masked, origin="lower", cmap="plasma", vmin=vmin, vmax=vmax, extent=(-1, 1, -1, 1))
 
     # limb
     t = np.linspace(0, 2 * np.pi, 720)

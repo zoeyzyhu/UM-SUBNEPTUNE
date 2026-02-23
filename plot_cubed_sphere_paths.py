@@ -30,7 +30,7 @@ from cubed_sphere_plot_utils import (
 def save_lonlat_plot(field, lon_deg, lat_deg, var_name: str, nc_stem: str, outdir: Path):
     vmin, vmax = percentile_range(field, 1.0, 99.0)
     fig, ax = plt.subplots(figsize=(13, 6.5), constrained_layout=True)
-    pcm = ax.pcolormesh(lon_deg, lat_deg, field, shading="auto", cmap="viridis", vmin=vmin, vmax=vmax)
+    pcm = ax.pcolormesh(lon_deg, lat_deg, field, shading="auto", cmap="plasma", vmin=vmin, vmax=vmax)
     ax.set_xlim(-180, 180)
     ax.set_ylim(-90, 90)
     ax.set_xticks(np.arange(-180, 181, 30))
